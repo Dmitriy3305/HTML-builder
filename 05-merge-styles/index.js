@@ -9,7 +9,7 @@ fs.writeFile("./05-merge-styles/project-dist/bundle.css", " ", (err) => {
 
 readdir(cssPath, { withFileTypes: true }).then((files) => {
   for (let item of files) {
-    if (item.name.split(".").pop() === "css" && item.isFile() === "true") {
+    if (item.name.split(".").pop() === "css" && item.isFile() === true) {
       fs.readFile(path.join(cssPath, item.name), "utf8", (err, data) => {
         if (err) throw err;
         fs.appendFile(
